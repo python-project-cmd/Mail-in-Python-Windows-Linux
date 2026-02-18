@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+    <class>MainWindow</class>
+    <widget class="QMainWindow" name="MainWindow">
+        <property name="geometry"><rect><x>0</x><y>0</y><width>1100</width><height>750</height></rect></property>
+        <property name="windowTitle"><string>Duck Mail</string></property>
+        <widget class="QWidget" name="centralwidget">
+            <layout class="QHBoxLayout" name="horizontalLayout_main">
+                <property name="spacing"><number>0</number></property>
+                <property name="leftMargin"><number>0</number></property>
+                <property name="topMargin"><number>0</number></property>
+                <property name="rightMargin"><number>0</number></property>
+                <property name="bottomMargin"><number>0</number></property>
+                <item>
+                    <widget class="QFrame" name="sideBar">
+                        <layout class="QVBoxLayout" name="verticalLayout_side">
+                            <property name="spacing"><number>10</number></property>
+                            <item>
+                                <widget class="QLabel" name="logoLabel">
+                                    <property name="text"><string>🦆 DUCK MAIL</string></property>
+                                    <property name="alignment"><set>Qt::AlignCenter</set></property>
+                                    <property name="styleSheet"><string>font-size: 18px; font-weight: bold; color: #cba6f7; padding: 10px;</string></property>
+                                </widget>
+                            </item>
+                            <item><widget class="QPushButton" name="btn_nav_inbox"><property name="text"><string>📥 Odebrane</string></property></widget></item>
+                            <item><widget class="QPushButton" name="btn_nav_send"><property name="text"><string>📤 Wyślij</string></property></widget></item>
+                            <item><widget class="QPushButton" name="btn_sync"><property name="text"><string>🔄 Synchronizuj</string></property></widget></item>
+                            <item><widget class="QPushButton" name="btn_theme"><property name="text"><string>🌓 Motyw</string></property></widget></item>
+                        </layout>
+                    </widget>
+                </item>
+                <item>
+                    <widget class="QStackedWidget" name="stackedWidget">
+                        <widget class="QWidget" name="page_inbox">
+                            <layout class="QVBoxLayout" name="vbox1">
+                                <item>
+                                    <widget class="QFrame" name="loginFrame">
+                                        <layout class="QHBoxLayout" name="hbox_login">
+                                            <item><widget class="QLineEdit" name="input_email"><property name="placeholderText"><string>Email</string></property></widget></item>
+                                            <item><widget class="QLineEdit" name="input_pass"><property name="placeholderText"><string>Hasło aplikacji</string></property><property name="echoMode"><enum>QLineEdit::Password</enum></property></widget></item>
+                                            <item><widget class="QComboBox" name="combo_prov"/></item>
+                                            <item><widget class="QPushButton" name="btn_add_acc"><property name="text"><string>Zaloguj</string></property></widget></item>
+                                        </layout>
+                                    </widget>
+                                </item>
+                                <item>
+                                    <widget class="QSplitter" name="splitter">
+                                        <property name="orientation"><enum>Qt::Vertical</enum></property>
+                                        <widget class="QListWidget" name="mail_list"/>
+                                        <widget class="QTextEdit" name="mail_view"><property name="readOnly"><bool>true</bool></property></widget>
+                                    </widget>
+                                </item>
+                            </layout>
+                        </widget>
+                        <widget class="QWidget" name="page_send">
+                            <layout class="QVBoxLayout" name="vbox2">
+                                <item><widget class="QLineEdit" name="to_in"><property name="placeholderText"><string>Do:</string></property></widget></item>
+                                <item><widget class="QLineEdit" name="subj_in"><property name="placeholderText"><string>Temat:</string></property></widget></item>
+                                <item><widget class="QTextEdit" name="body_in"><property name="placeholderText"><string>Treść...</string></property></widget></item>
+                                <item><widget class="QPushButton" name="btn_send_now"><property name="text"><string>Wyślij wiadomość</string></property></widget></item>
+                            </layout>
+                        </widget>
+                    </widget>
+                </item>
+            </layout>
+        </widget>
+    </widget>
+</ui>

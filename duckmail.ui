@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>750</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Duck Mail</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow { background-color: #1e1e2e; }
+    #sideBar { background-color: #181825; border-right: 1px solid #313244; min-width: 200px; }
+    #contentArea { background-color: #1e1e2e; }
+    QPushButton {
+    background-color: #313244; color: #cdd6f4; border: none;
+    padding: 15px; text-align: left; font-size: 14px; border-radius: 5px;
+    }
+    QPushButton:hover { background-color: #45475a; }
+    QPushButton#btn_sync { background-color: #cba6f7; color: #11111b; font-weight: bold; }
+    QLineEdit, QTextEdit, QListWidget, QComboBox {
+    background-color: #313244; border: 1px solid #45475a;
+    border-radius: 8px; color: #cdd6f4; padding: 8px;
+    }
+    QTabWidget::pane { border: none; }
+    QTabBar::tab { background: #181825; color: #cdd6f4; padding: 10px; }
+    QTabBar::tab:selected { background: #313244; border-bottom: 2px solid #cba6f7; }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_main">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QFrame" name="sideBar">
+      <layout class="QVBoxLayout" name="verticalLayout_side">
+       <property name="spacing">
+        <number>10</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="logoLabel">
+         <property name="styleSheet">
+          <string>font-size: 20px; font-weight: bold; color: #cba6f7; margin-bottom: 20px;</string>
+         </property>
+         <property name="text">
+          <string>🦆 DUCK MAIL</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nav_inbox">
+         <property name="text">
+          <string>📥 Odebrane</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nav_send">
+         <property name="text">
+          <string>📤 Wyślij</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="spacer">
+         <property name="orientation">
+          <enum>Qt::Orientation::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_sync">
+         <property name="text">
+          <string>🔄 Synchronizuj</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_theme">
+         <property name="text">
+          <string>🌓 Zmień motyw</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <widget class="QWidget" name="page_inbox">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QSplitter" name="splitter">
+          <property name="orientation">
+           <enum>Qt::Orientation::Vertical</enum>
+          </property>
+          <widget class="QListWidget" name="mail_list"/>
+          <widget class="QTextEdit" name="mail_view">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_send">
+       <layout class="QVBoxLayout">
+        <item>
+         <widget class="QLineEdit" name="to_in">
+          <property name="placeholderText">
+           <string>Do:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLineEdit" name="subj_in">
+          <property name="placeholderText">
+           <string>Temat:</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTextEdit" name="body_in">
+          <property name="placeholderText">
+           <string>Treść wiadomości...</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btn_send_now">
+          <property name="text">
+           <string>Wyślij teraz</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
